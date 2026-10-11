@@ -1,0 +1,33 @@
+{
+  "updated": "2026-10-10 07:12:40",
+  "count": 3,
+  "buses": [
+    {
+      "id": "2667",
+      "latitude": 35.496938,
+      "longitude": 139.616398,
+      "route": "39系統",
+      "destination": "小机駅前経由 横浜駅西口行",
+      "courseId": "0001600664",
+      "direction": "yokohama"
+    },
+    {
+      "id": "3441",
+      "latitude": 35.467955,
+      "longitude": 139.6216785,
+      "route": "39系統",
+      "destination": "小机駅前経由 緑車庫前行",
+      "courseId": "0001600593",
+      "direction": "up"
+    },
+    {
+      "id": "1817",
+      "latitude": 35.510873000000004,
+      "longitude": 139.579953,
+      "route": "39系統",
+      "destination": "小机駅前経由 緑車庫前行",
+      "courseId": "0001600593",
+      "direction": "up"
+    }
+  ]
+}
