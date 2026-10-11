@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>横浜市営バス リアルタイム表示39系統</title>
+<title>横浜市営バス リアルタイム表示52系統</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#f5f5f5;font-family:"Yu Gothic","Meiryo",sans-serif;position:relative;min-height:2800px;overflow:auto}
-.line{position:absolute;left:330px;top:0;width:10px;height:8250px;background:#ff9900;border-radius:10px}
+.line{position:absolute;left:330px;top:0;width:10px;height:2250px;background:#ff9900;border-radius:10px}
 .station{position:absolute;left:320px;width:30px;height:30px;background:#fff;border:5px solid #ff9900;border-radius:50%;z-index:5}
 .station-name{position:absolute;left:20px;width:270px;font-size:20px;font-weight:bold;line-height:30px}
 .bus{position:absolute;width:155px;min-height:58px;background:#0066cc;color:#fff;border-radius:12px;padding:6px 9px;font-size:15px;font-weight:bold;text-align:center;box-shadow:0 3px 8px rgba(0,0,0,.30);transition:top .8s ease,left .8s ease;z-index:100}
@@ -23,7 +23,7 @@ body{background:#f5f5f5;font-family:"Yu Gothic","Meiryo",sans-serif;position:rel
   body{min-height:2000px;overflow-x:hidden;overflow-y:auto;}
 
   /* 画面幅に合わせて路線を配置 */
-  .line{left:50vw;width:8px;height:8250px;}
+  .line{left:50vw;width:8px;height:2250px;}
   .station{left:calc(49vw - 5px);width:28px;height:28px;border-width:4px;}
 
   /* 停留所名は左側に収める */
@@ -74,7 +74,7 @@ body{background:#f5f5f5;font-family:"Yu Gothic","Meiryo",sans-serif;position:rel
 <body>
 <div class="line"></div>
 <div class="info-panel">
-  <div class="info-title">🚌 39系統</div>
+  <div class="info-title">🚌 52系統</div>
   <div class="info-label">現在運行中のバス</div>
   <div class="info-value"><span id="busCount">取得中...</span> 台</div>
   <div class="info-label">最終更新</div>
@@ -88,29 +88,15 @@ body{background:#f5f5f5;font-family:"Yu Gothic","Meiryo",sans-serif;position:rel
    画面に表示する共通停留所
 ---------------------------------------- */
 const stationNames=[
-  "中山駅前","↑西村橋・緑消防署前↓","中山町","中山小学校南",
-  "上山町","石神","白山ハイテクパーク","緑車庫前","白山一丁目","鴨居橋","鴨居駅前",
-  "林光寺前","東観寺入口","御嶽前",
-  "東本郷町","泉谷寺団地入口","泉谷寺前",
-  "小机辻","小机駅前","鳥山","又口橋",
-  "岸根","岸根谷戸","岸根山王下","篠原池","六角橋北町","六角橋六丁目","神橋小学校前",
-  "六角橋中町","六角橋","西神奈川２丁目","東白楽",
-  "神奈川公会堂入口","東神奈川駅西口","二ツ谷町","反町","青木橋",
-  "鶴屋町２丁目","鶴屋町３丁目","横浜駅西口"
+  "上大岡駅前","関の下","笹下港南中央通","港南区総合庁舎前",
+  "吉原","新吉原橋","日野公園墓地入口","日野橋","公務員住宅入口","野庭団地東口","野庭中央公園"
 
 ];
 
 const displayTop={
-  "中山駅前":100,"↑西村橋・緑消防署前↓":300,"中山町":500,"中山小学校南":700,
-  "上山町":900,"石神":1100,"白山ハイテクパーク":1300,"緑車庫前":1500,
-  "白山一丁目":1700,"鴨居橋":1900,"鴨居駅前":2100,
-  "林光寺前":2300,"東観寺入口":2500,"御嶽前":2700,
-  "東本郷町":2900,"泉谷寺団地入口":3100,"泉谷寺前":3300,
-  "小机辻":3500,"小机駅前":3700,"鳥山":3900,"又口橋":4100,
-  "岸根":4300,"岸根谷戸":4500,"岸根山王下":4700,"篠原池":4900,"六角橋北町":5100,"六角橋六丁目":5300,"神橋小学校前":5500,
-  "六角橋中町":5700,六角橋":5900,"西神奈川２丁目":6100,"東白楽":6300,
-  "神奈川公会堂入口":6500,"東神奈川駅西口":6700,"二ツ谷町":6900,"反町":7100,"青木橋":7300,
-  "鶴屋町２丁目":7500,"鶴屋町３丁目":7700,"横浜駅西口":7900
+  "上大岡駅前":100,"関の下":300,"笹下港南中央通":500,"港南区総合庁舎前":700,
+  "吉原":900,"新吉原橋":1100,"日野公園墓地入口":1300,"日野橋":1500,
+  "公務員住宅入口":1700,"野庭団地東口":1900,"野庭中央公園":2100
 
 };
 
